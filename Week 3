@@ -1,0 +1,245 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyProaM1x/9MQ3+92JJNGkM+",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chenko-4/Pemrograman-Dasar/blob/main/Week%203\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KMRBtrftdfLo",
+        "outputId": "06958dfb-7e06-4589-bac6-db239a04caf7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan bilangan pertama: 2\n",
+            "Masukkan bilangan kedua: 4\n",
+            "Hasil Penjumlahan (+): 6\n",
+            "Hasil Pengurangan (-): -2\n",
+            "Hasil Perkalian (*): 8\n",
+            "Hasil Pembagian (/): 0.5\n",
+            "Hasil Pembagian Bulat (//): 0\n",
+            "Hasil Modulus (%): 2\n"
+          ]
+        }
+      ],
+      "source": [
+        "# =========================================================\n",
+        "# Nama           : Chenko Razin Rabbani\n",
+        "# NIM            : 4232501052\n",
+        "# Tanggal        : 22 September 2026\n",
+        "# Tujuan Program : Meminta input dua bilangan bulat dan\n",
+        "#                  menampilkan hasil operasi +, -, *, /, //, dan %\n",
+        "# =========================================================\n",
+        "\n",
+        "# Langkah 1: Menerima input dari pengguna\n",
+        "a = int(input(\"Masukkan bilangan pertama: \"))\n",
+        "b = int(input(\"Masukkan bilangan kedua: \"))\n",
+        "\n",
+        "# Langkah 2 & 3: Menghitung dan menampilkan hasil operasi\n",
+        "print(f\"Hasil Penjumlahan (+): {a + b}\")\n",
+        "print(f\"Hasil Pengurangan (-): {a - b}\")\n",
+        "print(f\"Hasil Perkalian (*): {a * b}\")\n",
+        "print(f\"Hasil Pembagian (/): {a / b}\")\n",
+        "print(f\"Hasil Pembagian Bulat (//): {a // b}\")\n",
+        "print(f\"Hasil Modulus (%): {a % b}\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# =========================================================\n",
+        "# Nama           : Chenko Razin Rabbani\n",
+        "# NIM            : 4232501052\n",
+        "# Tanggal        : 22 September 2026\n",
+        "# Tujuan Program : Menerima input nilai ujian dan mengecek\n",
+        "#                  kelulusan (>= 60) menggunakan operator relasional\n",
+        "# =========================================================\n",
+        "\n",
+        "# Langkah 1: Menerima input nilai ujian\n",
+        "nilai = float(input(\"Masukkan nilai ujian (0-100): \"))\n",
+        "\n",
+        "# Langkah 2 & 3: Evaluasi dengan operator relasional\n",
+        "status_lulus = nilai >= 60\n",
+        "print(f\"Nilai ini termasuk kategori lulus (>= 60): {status_lulus}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tNCjPdwOgXVZ",
+        "outputId": "56a32cee-d9ff-4cee-95a6-2bcd96af69ec"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan nilai ujian (0-100): 90\n",
+            "Nilai ini termasuk kategori lulus (>= 60): True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# =========================================================\n",
+        "# Nama           : Chenko Razin Rabbani\n",
+        "# NIM            : 4232501052\n",
+        "# Tanggal        : 22 September 2026\n",
+        "# Tujuan Program : Mengecek kelayakan mengemudi dengan operator logika\n",
+        "#                  serta mengimplementasikan latihan operator precedence\n",
+        "# =========================================================\n",
+        "\n",
+        "# Langkah 1: Menerima input dari pengguna\n",
+        "umur = int(input(\"Masukkan umur Anda: \"))\n",
+        "input_sim = input(\"Apakah punya SIM? (ketik 'True' atau 'False'): \").strip()\n",
+        "punya_sim = input_sim.lower() == 'true'\n",
+        "\n",
+        "# Langkah 2: Pengecekan syarat boleh mengemudi\n",
+        "boleh_mengemudi = (umur >= 17) and punya_sim\n",
+        "print(f\"Boleh mengemudi sendiri: {boleh_mengemudi}\")\n",
+        "\n",
+        "# Langkah 3: Latihan Operator Precedence (Menggunakan Tanda Kurung)\n",
+        "# Contoh: Mendapatkan promo pengemudi jika boleh mengemudi DAN (umur > 50 ATAU umur < 20)\n",
+        "dapat_promo = boleh_mengemudi and (umur > 50 or umur < 20)\n",
+        "print(f\"Status mendapat promo khusus pengemudi: {dapat_promo}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5uefS9JWgZ_B",
+        "outputId": "a4ede9e6-c809-469d-f80f-4be754cc2931"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan umur Anda: 19\n",
+            "Apakah punya SIM? (ketik 'True' atau 'False'): True\n",
+            "Boleh mengemudi sendiri: True\n",
+            "Status mendapat promo khusus pengemudi: True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# =========================================================\n",
+        "# Nama           : Chenko Razin Rabbani\n",
+        "# NIM            : 4232501052\n",
+        "# Tanggal        : 22 September 2026\n",
+        "# Tujuan Program : Menghitung efisiensi termal unit pembangkit\n",
+        "#                  berdasarkan energi input dan output (MJ)\n",
+        "#                  serta menampilkan hasil pembulatan 2 desimal.\n",
+        "# =========================================================\n",
+        "\n",
+        "# Langkah 1: Menerima masukan nilai energi input dan output dari pengguna\n",
+        "energi_input = float(input(\"Masukkan nilai energi input (MJ): \"))\n",
+        "energi_output = float(input(\"Masukkan nilai energi output (MJ): \"))\n",
+        "\n",
+        "# Langkah 2: Menghitung efisiensi termal dengan tanda kurung sesuai precedence\n",
+        "efisiensi = (energi_output / energi_input) * 100\n",
+        "\n",
+        "# Langkah 3: Menampilkan hasil efisiensi dengan f-string dibulatkan 2 desimal\n",
+        "print(f\"Efisiensi termal unit pembangkit: {efisiensi:.2f}%\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ItEPbWYvjVyI",
+        "outputId": "f792bd3d-1a5b-46b9-901d-cbebd5786299"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan nilai energi input (MJ): 100\n",
+            "Masukkan nilai energi output (MJ): 100\n",
+            "Efisiensi termal unit pembangkit: 100.00%\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# =========================================================\n",
+        "# Nama           : Chenko Razin Rabbani\n",
+        "# NIM            : 4232501052\n",
+        "# Tanggal        : 22 September 2026\n",
+        "# Tujuan Program : Menentukan kondisi perlu maintenance unit pembangkit\n",
+        "#                  menggunakan operator relasional dan logika (or)\n",
+        "#                  tanpa menggunakan percabangan if/else.\n",
+        "# =========================================================\n",
+        "\n",
+        "# Langkah 1: Menerima input suhu boiler dan beban operasi\n",
+        "suhu_boiler = float(input(\"Masukkan suhu boiler (°C): \"))\n",
+        "beban_operasi = float(input(\"Masukkan beban operasi (%): \"))\n",
+        "\n",
+        "# Langkah 2: Evaluasi kondisi maintenance dengan operator relasional dan logika 'or'\n",
+        "perlu_maintenance = (suhu_boiler > 550) or (beban_operasi > 95)\n",
+        "\n",
+        "# Langkah 3: Menampilkan hasil boolean dalam kalimat naratif menggunakan f-string\n",
+        "print(f\"Status unit pembangkit memerlukan maintenance (suhu > 550°C atau beban > 95%): {perlu_maintenance}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FIkRN3qRj51z",
+        "outputId": "947db700-8ff5-4258-f0d1-613e6f3cb5ba"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan suhu boiler (°C): 550\n",
+            "Masukkan beban operasi (%): 95\n",
+            "Status unit pembangkit memerlukan maintenance (suhu > 550°C atau beban > 95%): False\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
