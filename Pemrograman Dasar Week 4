@@ -1,0 +1,364 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPmcOYToB6dYJBaAIxpTuys",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chenko-4/Pemrograman-Dasar/blob/main/Pemrograman%20Dasar%20Week%204\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MJcMs4Ii31Y1",
+        "outputId": "624f9e06-a77f-4f13-8d07-cc75e5011842"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Berapa porsi makan yang Anda beli? : 10\n",
+            "Siapa Nama Pelanggan ? : Chen\n",
+            "Pelanggan Chen membeli 10.0 porsi.\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Kode Program Setelah Dimodifikasi\n",
+        "total = float(input(\"Berapa porsi makan yang Anda beli? : \"))\n",
+        "Nama = str(input(\"Siapa Nama Pelanggan ? : \"))\n",
+        "\n",
+        "print(f\"Pelanggan {Nama} membeli {total} porsi.\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Deklarasi Variabel\n",
+        "nama_makanan = \"Mi ayam bakso\"  # String (%s)\n",
+        "jumlah_porsi = 3               # Integer (%d)\n",
+        "harga_porsi = 15000.50         # Float (%f)\n",
+        "kode_meja = 15                 # Bilangan desimal yang akan diubah ke Hexa (%x) & Octal (%o)\n",
+        "\n",
+        "# 1. Contoh %s (String)\n",
+        "print(\"Pesanan: %s\" % (nama_makanan))\n",
+        "\n",
+        "# 2. Contoh %d (Integer)\n",
+        "print(\"Jumlah Porsi: %d porsi\" % (jumlah_porsi))\n",
+        "\n",
+        "# 3. Contoh %f (Float - dibatasi 2 angka desimal)\n",
+        "print(\"Harga Per Porsi: Rp %.2f\" % (harga_porsi))\n",
+        "\n",
+        "# 4. Contoh %x (Hexadesimal)\n",
+        "print(\"Kode Meja (Hexadesimal): %x\" % (kode_meja))\n",
+        "\n",
+        "# 5. Contoh %o (Octal)\n",
+        "print(\"Kode Meja (Oktal): %o\" % (kode_meja))\n",
+        "\n",
+        "# Gabungan seluruh format specifier\n",
+        "print(\"Pelanggan memesan %d porsi %s seharga Rp %.2f di meja berkode hex %x\" %\n",
+        "      (jumlah_porsi, nama_makanan, harga_porsi, kode_meja))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9_4uV1SW4ZU_",
+        "outputId": "c5e85db4-3fad-46c2-8d39-598d871f65bd"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Pesanan: Mi ayam bakso\n",
+            "Jumlah Porsi: 3 porsi\n",
+            "Harga Per Porsi: Rp 15000.50\n",
+            "Kode Meja (Hexadesimal): f\n",
+            "Kode Meja (Oktal): 17\n",
+            "Pelanggan memesan 3 porsi Mi ayam bakso seharga Rp 15000.50 di meja berkode hex f\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Mengambil input dari keyboard\n",
+        "total_detik = int(input(\"Masukkan total detik: \"))\n",
+        "\n",
+        "# 2. Perhitungan Konversi\n",
+        "jam = total_detik // 3600             # Hitung jumlah jam\n",
+        "sisa_detik = total_detik % 3600       # Hitung sisa detik setelah diambil jam\n",
+        "menit = sisa_detik // 60              # Hitung jumlah menit dari sisa detik (perbaikan dari // 6)\n",
+        "detik = sisa_detik % 60               # Sisa detik akhir\n",
+        "\n",
+        "# 3. Output hasil\n",
+        "print(f\"Hasil Konversi: {jam} Jam, {menit} Menit, {detik} Detik\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "o8UHXiou4c5c",
+        "outputId": "dd01e9c5-52fc-48cb-b2d4-3d43a795c894"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan total detik: 358200\n",
+            "Hasil Konversi: 99 Jam, 30 Menit, 0 Detik\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Input 5 komponen nilai mahasiswa via keyboard\n",
+        "tugas1 = float(input(\"Masukkan Nilai Tugas 1: \"))\n",
+        "tugas2 = float(input(\"Masukkan Nilai Tugas 2: \"))\n",
+        "uts    = float(input(\"Masukkan Nilai UTS: \"))\n",
+        "uas    = float(input(\"Masukkan Nilai UAS: \"))\n",
+        "kuis   = float(input(\"Masukkan Nilai Kuis: \"))\n",
+        "\n",
+        "# Hitung nilai_mahasiswa dari rerata/bobot 5 komponen nilai tersebut\n",
+        "nilai_mahasiswa = (tugas1 * 0.15) + (tugas2 * 0.15) + (kuis * 0.10) + (uts * 0.30) + (uas * 0.30)\n",
+        "\n",
+        "# 2. Input standar kelulusan dari keyboard\n",
+        "standar_kelulusan = float(input(\"Masukkan Standar Kelulusan: \"))\n",
+        "\n",
+        "# 3. Evaluasi kondisi logika\n",
+        "apakah_lulus = nilai_mahasiswa >= standar_kelulusan\n",
+        "perlu_remedial = nilai_mahasiswa < standar_kelulusan\n",
+        "\n",
+        "# 4. Output Hasil\n",
+        "print(f\"\\nNilai Mahasiswa: {nilai_mahasiswa:.2f}\")\n",
+        "print(f\"Standar Kelulusan: {standar_kelulusan}\")\n",
+        "print(f\"Apakah Mahasiswa Lulus? {apakah_lulus}\")\n",
+        "print(f\"Perlu Remedial? {perlu_remedial}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oo9EJ86_4ihw",
+        "outputId": "a1f3acfe-7001-47d3-fa3d-40b602cc729f"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan Nilai Tugas 1: 80\n",
+            "Masukkan Nilai Tugas 2: 80\n",
+            "Masukkan Nilai UTS: 70\n",
+            "Masukkan Nilai UAS: 90\n",
+            "Masukkan Nilai Kuis: 80\n",
+            "Masukkan Standar Kelulusan: 70\n",
+            "\n",
+            "Nilai Mahasiswa: 80.00\n",
+            "Standar Kelulusan: 70.0\n",
+            "Apakah Mahasiswa Lulus? True\n",
+            "Perlu Remedial? False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Input belanja dari keyboard\n",
+        "belanja = float(input(\"Masukkan total belanjaan Anda: Rp \"))\n",
+        "\n",
+        "# 2. Logika diskon 35% (0.35) jika belanja > 1000000\n",
+        "# Ekspresi boolean (belanja > 1000000) bernilai 1 jika True dan 0 jika False\n",
+        "diskon = (0, 0.35 * belanja)[belanja > 1000000]\n",
+        "\n",
+        "total_harga = belanja - diskon\n",
+        "\n",
+        "# Output\n",
+        "print(f\"Total Belanja               : Rp {belanja:,.2f}\")\n",
+        "print(f\"Diskon yang didapat (35%)   : Rp {diskon:,.2f}\")\n",
+        "print(f\"Total harga setelah diskon  : Rp {total_harga:,.2f}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "i0mixqrR4mNs",
+        "outputId": "d0fc2d09-2469-44d5-d0bc-5ef13ca5bcbf"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan total belanjaan Anda: Rp 850000\n",
+            "Total Belanja               : Rp 850,000.00\n",
+            "Diskon yang didapat (35%)   : Rp 0.00\n",
+            "Total harga setelah diskon  : Rp 850,000.00\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "belanja = float(input(\"Masukkan total belanjaan Anda: Rp \"))\n",
+        "\n",
+        "if belanja > 1000000:\n",
+        "    diskon = 0.35 * belanja\n",
+        "else:\n",
+        "    diskon = 0\n",
+        "\n",
+        "total_harga = belanja - diskon\n",
+        "print(f\"Total harga setelah diskon = Rp {total_harga}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9n2QuvUS4nHV",
+        "outputId": "b04597d1-3df9-41ff-eb21-d7f88c1d20aa"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan total belanjaan Anda: Rp 1200000\n",
+            "Total harga setelah diskon = Rp 780000.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tahun = int(input(\"Masukkan Tahun: \"))\n",
+        "\n",
+        "# Ekspresi Logika Kompleks\n",
+        "is_kabisat = (tahun % 4 == 0 and tahun % 100 != 0) or (tahun % 400 == 0)\n",
+        "\n",
+        "print(f\"Apakah tahun {tahun} merupakan tahun kabisat? {is_kabisat}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hcgSVFBW5U7G",
+        "outputId": "3d9a8b4b-a558-4fbf-da81-dcbde128c6ad"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan Tahun: 2007\n",
+            "Apakah tahun 2007 merupakan tahun kabisat? False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# PROGRAM KALKULATOR PEMBELIAN BARANG ELEKTRONIK\n",
+        "\n",
+        "# Global Scope\n",
+        "PAJAK_RATE = 0.11 # Pajak PPN 11%\n",
+        "\n",
+        "def hitung_pembayaran():\n",
+        "    # Local Scope\n",
+        "    print(\"=== PROGRAM KASIR TOKO ELEKTRONIK ===\")\n",
+        "\n",
+        "    # 1. Fungsi Input\n",
+        "    nama_barang = input(\"Masukkan Nama Barang : \")\n",
+        "    harga_satuan = float(input(\"Masukkan Harga Satuan (Rp) : \"))\n",
+        "    jumlah_beli = int(input(\"Masukkan Jumlah Beli : \"))\n",
+        "\n",
+        "    # 2. Operasi Aritmatika\n",
+        "    subtotal = harga_satuan * jumlah_beli\n",
+        "    pajak = subtotal * PAJAK_RATE\n",
+        "    total_bayar = subtotal + pajak\n",
+        "\n",
+        "    # 3. Fungsi Output\n",
+        "    print(\"\\n\" + \"=\"*35)\n",
+        "    print(\"        RINCIAN PEMBAYARAN        \")\n",
+        "    print(\"=\"*35)\n",
+        "    print(f\"Nama Barang   : {nama_barang}\")\n",
+        "    print(f\"Subtotal      : Rp {subtotal:,.2f}\")\n",
+        "    print(f\"PPN (11%)     : Rp {pajak:,.2f}\")\n",
+        "    print(\"-\" * 35)\n",
+        "    print(f\"Total Bayar   : Rp {total_bayar:,.2f}\")\n",
+        "    print(\"=\"*35)\n",
+        "\n",
+        "# Memanggil Fungsi\n",
+        "hitung_pembayaran()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WRr46dAg5ZZE",
+        "outputId": "ad520786-9d07-490f-a99d-28edeb37893e"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "=== PROGRAM KASIR TOKO ELEKTRONIK ===\n",
+            "Masukkan Nama Barang : Oven\n",
+            "Masukkan Harga Satuan (Rp) : 762000\n",
+            "Masukkan Jumlah Beli : 1\n",
+            "\n",
+            "===================================\n",
+            "        RINCIAN PEMBAYARAN        \n",
+            "===================================\n",
+            "Nama Barang   : Oven\n",
+            "Subtotal      : Rp 762,000.00\n",
+            "PPN (11%)     : Rp 83,820.00\n",
+            "-----------------------------------\n",
+            "Total Bayar   : Rp 845,820.00\n",
+            "===================================\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
