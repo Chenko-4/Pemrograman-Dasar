@@ -1,0 +1,208 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOUtXXuDpk/7P/wEhrY2nkc",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Chenko-4/Pemrograman-Dasar/blob/main/Pertemuan%205\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CSe8IG79Fncm",
+        "outputId": "34081863-dc1d-45c3-e4f7-0a92bd17a282"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "--- SOAL 1 ---\n",
+            "Total Belanja        : Rp 129,500.00\n",
+            "Besar Diskon         : Rp 12,950.00\n",
+            "Harus Dibayar        : Rp 116,550.00\n",
+            "Uang Kembalian       : Rp 33,450.00\n",
+            "Iuran per Orang (4x) : Rp 29,137\n",
+            "Sisa Rupiah          : Rp 2\n",
+            "Apakah Uang Cukup?   : True\n",
+            "\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Soal 1: Belanja Buku\n",
+        "jumlah_buku = 7\n",
+        "harga_per_buku = 18500\n",
+        "persentase_diskon = 0.10\n",
+        "uang_bayar = 150000\n",
+        "\n",
+        "# 1. Total belanja, besar diskon, dan jumlah harus dibayar\n",
+        "total_belanja = jumlah_buku * harga_per_buku\n",
+        "besar_diskon = total_belanja * persentase_diskon\n",
+        "jumlah_harus_dibayar = total_belanja - besar_diskon\n",
+        "\n",
+        "# 2. Uang kembalian\n",
+        "uang_kembalian = uang_bayar - jumlah_harus_dibayar\n",
+        "\n",
+        "# 3. Patungan 4 orang (bilangan bulat) dan sisa\n",
+        "iuran_per_orang = int(jumlah_harus_dibayar) // 4\n",
+        "sisa_rupiah = int(jumlah_harus_dibayar) % 4\n",
+        "\n",
+        "# 4. Apakah uang Budi cukup?\n",
+        "uang_cukup = uang_bayar >= jumlah_harus_dibayar\n",
+        "\n",
+        "print(\"--- SOAL 1 ---\")\n",
+        "print(f\"Total Belanja        : Rp {total_belanja:,.2f}\")\n",
+        "print(f\"Besar Diskon         : Rp {besar_diskon:,.2f}\")\n",
+        "print(f\"Harus Dibayar        : Rp {jumlah_harus_dibayar:,.2f}\")\n",
+        "print(f\"Uang Kembalian       : Rp {uang_kembalian:,.2f}\")\n",
+        "print(f\"Iuran per Orang (4x) : Rp {iuran_per_orang:,}\")\n",
+        "print(f\"Sisa Rupiah          : Rp {sisa_rupiah:,}\")\n",
+        "print(f\"Apakah Uang Cukup?   : {uang_cukup}\\n\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Soal 2: PLTS Atap Rumah\n",
+        "jumlah_panel = 12\n",
+        "daya_per_panel = 450 # Watt-peak (Wp)\n",
+        "jam_penyinaran = 5\n",
+        "efisiensi = 0.8\n",
+        "kebutuhan_harian_kwh = 25\n",
+        "tarif_listrik = 1444.70\n",
+        "\n",
+        "# 1. Energi yang dihasilkan per hari (kWh)\n",
+        "energi_harian_wh = jumlah_panel * daya_per_panel * jam_penyinaran * efisiensi\n",
+        "energi_harian_kwh = energi_harian_wh / 1000\n",
+        "\n",
+        "# 2. Energi per bulan (30 hari) dan nilai rupiahnya\n",
+        "energi_bulan_kwh = energi_harian_kwh * 30\n",
+        "nilai_rupiah_bulan = energi_bulan_kwh * tarif_listrik\n",
+        "\n",
+        "# 3. Kekurangan energi per hari terhadap kebutuhan\n",
+        "kekurangan_energi = kebutuhan_harian_kwh - energi_harian_kwh\n",
+        "\n",
+        "# 4. Apakah PLTS sudah mencukupi kebutuhan rumah?\n",
+        "plts_cukup = energi_harian_kwh >= kebutuhan_harian_kwh\n",
+        "\n",
+        "print(\"--- SOAL 2 ---\")\n",
+        "print(f\"Energi per Hari      : {energi_harian_kwh:.2f} kWh\")\n",
+        "print(f\"Energi per Bulan     : {energi_bulan_kwh:.2f} kWh\")\n",
+        "print(f\"Nilai Rupiah Listrik : Rp {nilai_rupiah_bulan:,.2f}\")\n",
+        "print(f\"Kekurangan Energi    : {kekurangan_energi:.2f} kWh/hari\")\n",
+        "print(f\"PLTS Mencukupi?      : {plts_cukup}\\n\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "R70V7AGDFtZo",
+        "outputId": "00db0797-d995-461b-c92a-fe062a4421b1"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "--- SOAL 2 ---\n",
+            "Energi per Hari      : 21.60 kWh\n",
+            "Energi per Bulan     : 648.00 kWh\n",
+            "Nilai Rupiah Listrik : Rp 936,165.60\n",
+            "Kekurangan Energi    : 3.40 kWh/hari\n",
+            "PLTS Mencukupi?      : False\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Soal 3: Generator Diesel dan Rugi Kabel\n",
+        "daya_generator_kw = 200\n",
+        "jam_operasi = 8\n",
+        "konsumsi_per_kwh = 0.25 # liter/kWh\n",
+        "harga_solar = 13500\n",
+        "kapasitas_tangki = 1000 # liter\n",
+        "arus = 20 # Ampere\n",
+        "hambatan = 0.5 # Ohm\n",
+        "\n",
+        "# 1. Energi yang dibangkitkan per hari (kWh)\n",
+        "energi_dibangkitkan_kwh = daya_generator_kw * jam_operasi\n",
+        "\n",
+        "# 2. Kebutuhan solar per hari dan biayanya\n",
+        "kebutuhan_solar_harian = energi_dibangkitkan_kwh * konsumsi_per_kwh\n",
+        "biaya_solar_harian = kebutuhan_solar_harian * harga_solar\n",
+        "\n",
+        "# 3. Berapa hari penuh tangki cukup dan sisa solar\n",
+        "hari_penuh = int(kapasitas_tangki // kebutuhan_solar_harian)\n",
+        "sisa_solar = kapasitas_tangki % kebutuhan_solar_harian\n",
+        "\n",
+        "# 4. Rugi daya pada kabel (P = I^2 * R)\n",
+        "rugi_daya = (arus ** 2) * hambatan\n",
+        "\n",
+        "# 5. Apakah rugi kabel tergolong tinggi? (> 150 W DAN arus >= 20 A)\n",
+        "rugi_tinggi = (rugi_daya > 150) and (arus >= 20)\n",
+        "\n",
+        "print(\"--- SOAL 3 ---\")\n",
+        "print(f\"Energi Dibangkitkan  : {energi_dibangkitkan_kwh:.2f} kWh/hari\")\n",
+        "print(f\"Kebutuhan Solar/Hari : {kebutuhan_solar_harian:.2f} liter\")\n",
+        "print(f\"Biaya Solar Harian   : Rp {biaya_solar_harian:,.2f}\")\n",
+        "print(f\"Lama Tangki Cukup    : {hari_penuh} hari penuh\")\n",
+        "print(f\"Sisa Solar di Tangki : {sisa_solar:.2f} liter\")\n",
+        "print(f\"Rugi Daya Kabel      : {rugi_daya:.2f} Watt\")\n",
+        "print(f\"Rugi Kabel Tinggi?   : {rugi_tinggi}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3b5VBHz0F0nx",
+        "outputId": "3f050b14-eeac-4e26-f597-ee2bdb0ba527"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "--- SOAL 3 ---\n",
+            "Energi Dibangkitkan  : 1600.00 kWh/hari\n",
+            "Kebutuhan Solar/Hari : 400.00 liter\n",
+            "Biaya Solar Harian   : Rp 5,400,000.00\n",
+            "Lama Tangki Cukup    : 2 hari penuh\n",
+            "Sisa Solar di Tangki : 200.00 liter\n",
+            "Rugi Daya Kabel      : 200.00 Watt\n",
+            "Rugi Kabel Tinggi?   : True\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
